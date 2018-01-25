@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     build: '_build',
     source: 'source',
     defaultTarget: 'staging',
-    baseurl: correctBaseUrl(grunt.option('baseurl') || '/patternfly-org')
+    baseurl: correctBaseUrl(grunt.option('baseurl') || '/')
   };
 
   grunt.initConfig({
