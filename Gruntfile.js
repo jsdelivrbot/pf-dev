@@ -202,6 +202,7 @@ module.exports = function (grunt) {
         incremental: 'false'
       },
       staging: {
+        incremental: 'true'
       }
     },
     less: {
