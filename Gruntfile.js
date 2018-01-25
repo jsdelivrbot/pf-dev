@@ -29,19 +29,12 @@ module.exports = function (grunt) {
   require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
   grunt.loadNpmTasks('grunt-sync');
 
-  // var config = {
-  //   site: '_site',
-  //   build: '_build',
-  //   source: 'source',
-  //   defaultTarget: 'staging',
-  //   baseurl: correctBaseUrl(grunt.option('baseurl') || '/patternfly-org')
-  // };
   var config = {
     site: '_site',
     build: '_build',
     source: 'source',
     defaultTarget: 'staging',
-    baseurl: correctBaseUrl(grunt.option('baseurl') || '/')
+    baseurl: correctBaseUrl(grunt.option('baseurl') || '/patternfly-org')
   };
 
   grunt.initConfig({
@@ -65,13 +58,13 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'content/patternfly-design/pattern-library',
+            cwd: 'repos/patternfly-design/pattern-library',
             src: ['**/design/**', '!**/documents/**'],
             dest: '<%= config.build %>/_includes/pattern-library'
           },
           {
             expand: true,
-            cwd: 'content/patternfly-design/pattern-library',
+            cwd: 'repos/patternfly-design/pattern-library',
             src: ['**/design/**', '!**/documents/**', '!**/*.md'],
             dest: '<%= config.build %>/pattern-library',
             rename: function(dest, src) {
@@ -80,7 +73,7 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: 'content/patternfly-design/pattern-library',
+            cwd: 'repos/patternfly-design/pattern-library',
             src: ['**/site.md'],
             dest: '<%= config.build %>/pattern-library',
             rename: function(dest, src) {
@@ -89,13 +82,13 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: 'content/patternfly-design/styles',
+            cwd: 'repos/patternfly-design/styles',
             src: ['**/*.md'],
             dest: '<%= config.build %>/_includes/styles'
           },
           {
             expand: true,
-            cwd: 'content/patternfly-design/styles',
+            cwd: 'repos/patternfly-design/styles',
             src: ['**/!(*.md)'],
             dest: '<%= config.build %>/styles'
           }
@@ -106,13 +99,13 @@ module.exports = function (grunt) {
           // Copy resources from git repos
           {
             expand: true,
-            cwd: 'content/patternfly-core/tests/pages/_includes/widgets',
+            cwd: 'repos/patternfly-core/tests/pages/_includes/widgets',
             src: ['**'],
             dest: '<%= config.build %>/_includes/widgets'
           },
           {
             expand: true,
-            cwd: 'content/angular-patternfly/dist/docs/partials',
+            cwd: 'repos/angular-patternfly/dist/docs/partials',
             src: ['**'],
             dest: '<%= config.build %>/_includes/angular-partials'
           }
@@ -123,13 +116,13 @@ module.exports = function (grunt) {
           // Copy resources from git repos
           {
             expand: true,
-            cwd: 'content/patternfly-core/dist',
+            cwd: 'repos/patternfly-core/dist',
             src: ['**'],
             dest: '<%= config.build %>/components/patternfly/dist'
           },
           {
             expand: true,
-            cwd: 'content/angular-patternfly/dist',
+            cwd: 'repos/angular-patternfly/dist',
             src: ['**'],
             dest: '<%= config.build %>/components/angular-patternfly/dist'
           }
@@ -202,7 +195,6 @@ module.exports = function (grunt) {
         incremental: 'false'
       },
       staging: {
-        incremental: 'true'
       }
     },
     less: {
@@ -265,12 +257,12 @@ module.exports = function (grunt) {
         tasks: ['jekyll:staging']
       },
       design: {
-        files: ['content/patternfly-design/**/*'],
+        files: ['repos/patternfly-design/**/*'],
         tasks: ['sync:design']
       },
       examples: {
-        files: ['content/patternfly-core/tests/pages/_includes/widgets',
-                'content/angular-patternfly/dist/docs/partials'],
+        files: ['repos/patternfly-core/tests/pages/_includes/widgets',
+                'repos/angular-patternfly/dist/docs/partials'],
         tasks: ['sync:examples']
       },
       livereload: {
@@ -288,12 +280,12 @@ module.exports = function (grunt) {
     'uglify'
   ]);
 
-  // grunt.registerTask('cname', function (target) {
-  //   if (target === 'production') {
-  //     grunt.log.writeln(`Writing CNAME file to ${config.build}/CNAME`);
-  //     grunt.file.write(`${config.build}/CNAME`, 'www.patternfly.org\n');
-  //   }
-  // });
+  grunt.registerTask('cname', function (target) {
+    if (target === 'production') {
+      grunt.log.writeln(`Writing CNAME file to ${config.build}/CNAME`);
+      grunt.file.write(`${config.build}/CNAME`, 'www.patternfly.org\n');
+    }
+  });
 
   grunt.registerTask('buildConfig', function (target) {
     if (target === 'staging') {
@@ -316,8 +308,10 @@ module.exports = function (grunt) {
     target = target || config.defaultTarget;
     grunt.task.run([
       'clean',
+      'reposUpdate',
       'copy:components',
       'sync:patternflyDist',
+      'cname:' + target,
       'buildConfig:' + target,
       'sync:source',
       'sync:design',
@@ -327,6 +321,64 @@ module.exports = function (grunt) {
       //'csscount',
       'uglify',
     ]);
+  });
+
+  grunt.registerTask('reposUpdate', function (target) {
+    var done = this.async();
+    if (grunt.option('skip-repos-update')) {
+      done();
+      return;
+    }
+    var repoMap = {
+      'patternfly-core': {
+        path: 'repos/patternfly-core',
+        url: 'https://github.com/patternfly/patternfly.git',
+        branch: 'master-dist'
+      },
+      'angular-patternfly': {
+        path: 'repos/angular-patternfly',
+        url: 'https://github.com/patternfly/angular-patternfly.git',
+        branch: 'master-dist'
+      },
+      'patternfly-design': {
+        path: 'repos/patternfly-design',
+        url: 'https://github.com/patternfly/patternfly-design.git',
+        branch: 'master'
+      }
+    };
+    var keys = target ? [target] : Object.keys(repoMap);
+    var promises = [];
+    keys.forEach(function(key) {
+      var repo = repoMap[key];
+      promises.push(new Promise(function(resolve, reject) {
+        // git pull the repos
+        grunt.util.spawn({
+          cmd: 'git',
+          args: [ '-C', repo.path, 'pull']
+        }, function(error, result, code) {
+          if (error) {  // repo folder doesn't exists, so clone instead
+            grunt.util.spawn({
+              cmd: 'git',
+              args: [ 'clone', '--single-branch', '--depth', '1', '-b', repo.branch, repo.url, repo.path ]
+            }, function(error, result, code) {
+              if (error) { // an unknown error
+                console.error(`${key} (clone): ${error.stderr}`);
+                reject(error.code);
+              }
+              // clone is complete
+              console.log(`${key} (clone): ${result.stdout}`);
+              resolve(code);
+            });
+          } else { // update is complete
+            console.log(`${key} (update): ${result}`);
+            resolve(code);
+          }
+        });
+      }));
+    });
+    Promise.all(promises).then(function() {
+      done();
+    });
   });
 
   grunt.registerTask('build', function (target) {
