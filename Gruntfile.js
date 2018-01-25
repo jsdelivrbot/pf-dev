@@ -41,7 +41,7 @@ module.exports = function (grunt) {
     build: '_build',
     source: 'source',
     defaultTarget: 'staging',
-    baseurl: correctBaseUrl('/')
+    baseurl: correctBaseUrl(grunt.option('baseurl') || '/')
   };
 
   grunt.initConfig({
@@ -146,6 +146,8 @@ module.exports = function (grunt) {
               '**/*'
             ],
             filter: function(filepath) { // this filter is 5x faster as the corresponding glob
+              grunt.line.writeln(`from cliff:`);
+              grunt.line.writeln(`file: ${filepath}`);
               if (! grunt.file.isFile(filepath)) {
                 return false;
               }
