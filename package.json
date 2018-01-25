@@ -2,9 +2,7 @@
   "name": "patternfly-org",
   "version": "3.30.1",
   "author": "Red Hat",
-  "scripts": {
-    "grunt": "grunt"
-  },
+  "scripts": {},
   "license": "Apache-2.0",
   "devDependencies": {
     "connect": "^3.5.0",
