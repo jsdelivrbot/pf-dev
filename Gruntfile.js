@@ -280,12 +280,12 @@ module.exports = function (grunt) {
     'uglify'
   ]);
 
-  grunt.registerTask('cname', function (target) {
-    if (target === 'production') {
-      grunt.log.writeln(`Writing CNAME file to ${config.build}/CNAME`);
-      grunt.file.write(`${config.build}/CNAME`, 'www.patternfly.org\n');
-    }
-  });
+  // grunt.registerTask('cname', function (target) {
+  //   if (target === 'production') {
+  //     grunt.log.writeln(`Writing CNAME file to ${config.build}/CNAME`);
+  //     grunt.file.write(`${config.build}/CNAME`, 'www.patternfly.org\n');
+  //   }
+  // });
 
   grunt.registerTask('buildConfig', function (target) {
     if (target === 'staging') {
@@ -310,7 +310,6 @@ module.exports = function (grunt) {
       'clean',
       'copy:components',
       'sync:patternflyDist',
-      'cname:' + target,
       'buildConfig:' + target,
       'sync:source',
       'sync:design',
