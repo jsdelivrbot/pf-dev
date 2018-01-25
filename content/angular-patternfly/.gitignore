@@ -1,0 +1,11 @@
+node_modules
+lib
+coverage
+docs
+dist
+test-results.xml
+npm-debug.log
+
+.idea/*
+*.iml
+.vscode
