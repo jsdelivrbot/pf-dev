@@ -29,12 +29,19 @@ module.exports = function (grunt) {
   require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
   grunt.loadNpmTasks('grunt-sync');
 
+  // var config = {
+  //   site: '_site',
+  //   build: '_build',
+  //   source: 'source',
+  //   defaultTarget: 'staging',
+  //   baseurl: correctBaseUrl(grunt.option('baseurl') || '/patternfly-org')
+  // };
   var config = {
     site: '_site',
     build: '_build',
     source: 'source',
     defaultTarget: 'staging',
-    baseurl: correctBaseUrl(grunt.option('baseurl') || '/patternfly-org')
+    baseurl: correctBaseUrl('/')
   };
 
   grunt.initConfig({
