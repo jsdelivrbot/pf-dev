@@ -1,0 +1,119 @@
+- name: Launcher
+  category: Application Framework
+  slug: launcher
+  thumbnail: /assets/img/thumbnails/Launcher.jpg
+
+- name: Login Page
+  category: Application Framework
+  slug: login-page
+  thumbnail: /assets/img/thumbnails/Login.png
+
+- name: Masthead
+  category: Application Framework
+  slug: masthead
+  thumbnail: /assets/img/thumbnails/Masthead.jpg
+
+- name: Multi Factor Login
+  category: Application Framework
+  slug: multi-factor-login
+  thumbnail: /assets/img/thumbnails/Multi-Factor-Login.png
+
+- name: Single Sign On
+  category: Application Framework
+  slug: single-sign-on
+  thumbnail: /assets/img/thumbnails/Single-Sign-On.png
+
+- name: Aggregate Status Card
+  category: Cards
+  slug: aggregate-status-card
+  thumbnail: /assets/img/thumbnails/Agg-Card.png
+
+- name: Base Card
+  category: Cards
+  slug: base-card
+  thumbnail: /assets/img/thumbnails/Base-Card.png
+
+- name: Trend Card
+  category: Cards
+  slug: trend-card
+  thumbnail: /assets/img/thumbnails/Trend-Card.png
+
+- name: Utilization Bar Card
+  category: Cards
+  slug: utilization-bar-card
+  thumbnail: /assets/img/thumbnails/Util-Bar-Card.png
+
+- name: Utilization Trend Card
+  category: Cards
+  slug: utilization-trend-card
+  thumbnail: /assets/img/thumbnails/Util-Trend-Card.png
+
+- name: About Modal
+  category: Communication
+  slug: about-modal
+  thumbnail: /assets/img/thumbnails/About-Modal.png
+
+- name: Empty State
+  category: Communication
+  slug: empty-state
+  thumbnail: /assets/img/thumbnails/Empty-State.png
+
+- name: Inline Notifications
+  category: Communication
+  slug: inline-notifications
+  thumbnail: /assets/img/thumbnails/Inline-Notifications.png
+
+- name: Notification Drawer
+  category: Communication
+  slug: notification-drawer
+  thumbnail: /assets/img/thumbnails/Notification-Drawer.png
+
+- name: Toast Notifications
+  category: Communication
+  slug: toast-notifications
+  thumbnail: /assets/img/thumbnails/About-Modal.png
+
+- name: Tour
+  category: Communication
+  slug: tour
+  thumbnail: /assets/img/thumbnails/Tour.png
+
+- name: Wizard
+  category: Communication
+  slug: wizard
+  thumbnail: /assets/img/thumbnails/Wizard.png
+
+- name: About Modal
+  category: Communication
+  slug: about-modal
+  thumbnail: /assets/img/thumbnails/About-Modal.png
+
+- name: About Modal
+  category: Communication
+  slug: about-modal
+  thumbnail: /assets/img/thumbnails/About-Modal.png
+
+- name: Canvas View
+  category: Content Views
+  slug: canvas-view
+  thumbnail: /assets/img/thumbnails/Canvas-view.png
+
+- name: Card View
+  category: Content Views
+  slug: card-view
+  thumbnail: /assets/img/thumbnails/card-view.png
+
+- name: List View
+  category: Content Views
+  slug: list-view
+  thumbnail: /assets/img/thumbnails/List-View.png
+
+- name: Table View
+  category: Content Views
+  slug: table-view
+  thumbnail: /assets/img/thumbnails/Table.png
+
+- name: Dashboard Layout
+  category: Dashboard
+  slug: dashboard-layout
+  thumbnail: /assets/img/thumbnails/Dashboard-Layout.png
