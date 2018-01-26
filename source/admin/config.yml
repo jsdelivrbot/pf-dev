@@ -19,7 +19,7 @@ collections:
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Login Page"
-        name: "login_page"
+        name: "login-page"
         file: "source/_includes/pattern-library/application-framework/login-page/design/overview.md"
         extension: "md"
         format: "frontmatter"
