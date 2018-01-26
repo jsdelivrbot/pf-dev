@@ -1,4 +1,5 @@
 ---
+title: Single Sign-On
 ---
 # Single Sign-On (SSO)
 
