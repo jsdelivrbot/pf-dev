@@ -16,35 +16,35 @@ collections:
         file: "source/_includes/pattern-library/application-framework/launcher/design/overview.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Login Page"
         name: "login-page"
         file: "source/_includes/pattern-library/application-framework/login-page/design/overview.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Masthead"
         name: "masthead"
         file: "source/_includes/pattern-library/application-framework/masthead/design/overview.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Multi Factor Login"
         name: "multi-factor-login"
         file: "source/_includes/pattern-library/application-framework/multi-factor-login/design/overview.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Single Sign On"
         name: "single-sign-on"
         file: "source/_includes/pattern-library/application-framework/single-sign-on/design/overview.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
   - name: "pattern_designs" # Used in routes, e.g., /admin/collections/blog
     label: "Pattern Designs" # Used in the UI
@@ -54,33 +54,33 @@ collections:
         file: "source/_includes/pattern-library/application-framework/launcher/design/design.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Login Page"
         name: "login-page"
         file: "source/_includes/pattern-library/application-framework/login-page/design/design.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Masthead"
         name: "masthead"
         file: "source/_includes/pattern-library/application-framework/masthead/design/design.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Multi Factor Login"
         name: "multi-factor-login"
         file: "source/_includes/pattern-library/application-framework/multi-factor-login/design/design.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Single Sign On"
         name: "single-sign-on"
         file: "source/_includes/pattern-library/application-framework/single-sign-on/design/design.md"
         format: "frontmatter"
         fields:
-          - {label: "Title", name: "title", default: "", widget: "markdown"}
+          - {label: "Title", name: "title", default: "", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
