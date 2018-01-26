@@ -1,3 +1,5 @@
+---
+---
 # Masthead
 
 While there are two options for the masthead design, the order of information remains consistent regardless of whether you are using the tall or the short masthead design.

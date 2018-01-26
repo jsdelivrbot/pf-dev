@@ -1,3 +1,5 @@
+---
+---
 # Single Sign-On (SSO)
 
 ![Image of single sign-on](img/SSO-2.png)
