@@ -1,3 +1,5 @@
+---
+---
 # Single Sign-On (SSO)
 
 SSO (single sign-on) will allow a user to sign on once and access multiple applications within the same organization. For additional login methods, see:
