@@ -8,7 +8,7 @@ media_folder: "/source/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "overviews" # Used in routes, e.g., /admin/collections/blog
+  - name: "pattern_overviews" # Used in routes, e.g., /admin/collections/blog
     label: "Pattern Overviews" # Used in the UI
     files:
       - label: "Launcher"
@@ -42,6 +42,44 @@ collections:
       - label: "Single Sign On"
         name: "single-sign-on"
         file: "source/_includes/pattern-library/application-framework/single-sign-on/design/overview.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pattern_designs" # Used in routes, e.g., /admin/collections/blog
+    label: "Pattern Designs" # Used in the UI
+    files:
+      - label: "Launcher"
+        name: "launcher"
+        file: "source/_includes/pattern-library/application-framework/launcher/design/design.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Login Page"
+        name: "login-page"
+        file: "source/_includes/pattern-library/application-framework/login-page/design/design.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Masthead"
+        name: "masthead"
+        file: "source/_includes/pattern-library/application-framework/masthead/design/design.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Multi Factor Login"
+        name: "multi-factor-login"
+        file: "source/_includes/pattern-library/application-framework/multi-factor-login/design/design.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Single Sign On"
+        name: "single-sign-on"
+        file: "source/_includes/pattern-library/application-framework/single-sign-on/design/design.md"
         extension: "md"
         format: "frontmatter"
         fields:
