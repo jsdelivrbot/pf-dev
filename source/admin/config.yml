@@ -15,4 +15,4 @@ collections:
         name: "application_launcher"
         file: "source/_includes/pattern-library/application-framework/launcher/design/overview.md"
         fields:
-          - {label: "Content", name: "content", widget: "markdown"}
+          - {label: "Content", name: "body", widget: "markdown"}
