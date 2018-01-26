@@ -73,7 +73,7 @@ collections:
       - label: "Multi Factor Login"
         name: "multi-factor-login"
         file: "source/_includes/pattern-library/application-framework/multi-factor-login/design/design.md"
-          format: "frontmatter"
+        format: "frontmatter"
         fields:
           - {label: "Title", name: "title", default: "", widget: "markdown"}
           - {label: "Body", name: "body", widget: "markdown"}
