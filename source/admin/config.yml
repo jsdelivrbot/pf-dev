@@ -1,18 +1,19 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: master
 
 publish_mode: editorial_workflow
 
-media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "source/assets"
+public_folder: "/assets"
 
 collections:
   - name: "overviews" # Used in routes, e.g., /admin/collections/blog
-    label: "Overviews" # Used in the UI
+    label: "Pattern Overviews" # Used in the UI
     files:
       - label: "Application Launcher"
         name: "application_launcher"
         file: "source/_includes/pattern-library/application-framework/launcher/design/overview.md"
+        extension: "md"
         fields:
           - {label: "Content", name: "body", widget: "markdown"}
