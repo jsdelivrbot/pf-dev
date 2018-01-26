@@ -11,9 +11,37 @@ collections:
   - name: "overviews" # Used in routes, e.g., /admin/collections/blog
     label: "Pattern Overviews" # Used in the UI
     files:
-      - label: "Application Launcher"
-        name: "application_launcher"
+      - label: "Launcher"
+        name: "launcher"
         file: "source/_includes/pattern-library/application-framework/launcher/design/overview.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Login Page"
+        name: "login_page"
+        file: "source/_includes/pattern-library/application-framework/login-page/design/overview.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Masthead"
+        name: "masthead"
+        file: "source/_includes/pattern-library/application-framework/masthead/design/overview.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Multi Factor Login"
+        name: "multi-factor-login"
+        file: "source/_includes/pattern-library/application-framework/multi-factor-login/design/overview.md"
+        extension: "md"
+        format: "frontmatter"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Single Sign On"
+        name: "single-sign-on"
+        file: "source/_includes/pattern-library/application-framework/single-sign-on/design/overview.md"
         extension: "md"
         format: "frontmatter"
         fields:
