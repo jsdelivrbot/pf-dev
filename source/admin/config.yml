@@ -10,7 +10,6 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: "overviews" # Used in routes, e.g., /admin/collections/blog
     label: "Overviews" # Used in the UI
-    folder: "content/patternfly-design" # The path to the folder where the documents are stored
     files:
       - label: "Application Launcher"
         name: "application_launcher"
