@@ -15,5 +15,6 @@ collections:
         name: "application_launcher"
         file: "source/_includes/pattern-library/application-framework/launcher/design/overview.md"
         extension: "md"
+        format: "frontmatter"
         fields:
-          - {label: "Content", name: "body", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown"}
