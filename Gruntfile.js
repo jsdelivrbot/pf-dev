@@ -54,46 +54,46 @@ module.exports = function (grunt) {
           }
         ]
       },
-      design: {
-        files: [
-          {
-            expand: true,
-            cwd: 'repos/patternfly-design/pattern-library',
-            src: ['**/design/**', '!**/documents/**'],
-            dest: '<%= config.build %>/_includes/pattern-library'
-          },
-          {
-            expand: true,
-            cwd: 'repos/patternfly-design/pattern-library',
-            src: ['**/design/**', '!**/documents/**', '!**/*.md'],
-            dest: '<%= config.build %>/pattern-library',
-            rename: function(dest, src) {
-              return dest + '/' + src.replace('/design', '');
-            }
-          },
-          {
-            expand: true,
-            cwd: 'repos/patternfly-design/pattern-library',
-            src: ['**/site.md'],
-            dest: '<%= config.build %>/pattern-library',
-            rename: function(dest, src) {
-              return dest + '/' + src.replace('site.md', 'index.md');
-            }
-          },
-          {
-            expand: true,
-            cwd: 'repos/patternfly-design/styles',
-            src: ['**/*.md'],
-            dest: '<%= config.build %>/_includes/styles'
-          },
-          {
-            expand: true,
-            cwd: 'repos/patternfly-design/styles',
-            src: ['**/!(*.md)'],
-            dest: '<%= config.build %>/styles'
-          }
-        ]
-      },
+      // design: {
+      //   files: [
+      //     {
+      //       expand: true,
+      //       cwd: 'repos/patternfly-design/pattern-library',
+      //       src: ['**/design/**', '!**/documents/**'],
+      //       dest: '<%= config.build %>/_includes/pattern-library'
+      //     },
+      //     {
+      //       expand: true,
+      //       cwd: 'repos/patternfly-design/pattern-library',
+      //       src: ['**/design/**', '!**/documents/**', '!**/*.md'],
+      //       dest: '<%= config.build %>/pattern-library',
+      //       rename: function(dest, src) {
+      //         return dest + '/' + src.replace('/design', '');
+      //       }
+      //     },
+      //     {
+      //       expand: true,
+      //       cwd: 'repos/patternfly-design/pattern-library',
+      //       src: ['**/site.md'],
+      //       dest: '<%= config.build %>/pattern-library',
+      //       rename: function(dest, src) {
+      //         return dest + '/' + src.replace('site.md', 'index.md');
+      //       }
+      //     },
+      //     {
+      //       expand: true,
+      //       cwd: 'repos/patternfly-design/styles',
+      //       src: ['**/*.md'],
+      //       dest: '<%= config.build %>/_includes/styles'
+      //     },
+      //     {
+      //       expand: true,
+      //       cwd: 'repos/patternfly-design/styles',
+      //       src: ['**/!(*.md)'],
+      //       dest: '<%= config.build %>/styles'
+      //     }
+      //   ]
+      // },
       examples: {
         files: [
           // Copy resources from git repos
@@ -256,10 +256,10 @@ module.exports = function (grunt) {
         files: ['<%= config.build %>/**/*', '!<%= config.source %>/_less/**/*'],
         tasks: ['jekyll:staging']
       },
-      design: {
-        files: ['repos/patternfly-design/**/*'],
-        tasks: ['sync:design']
-      },
+      // design: {
+      //   files: ['repos/patternfly-design/**/*'],
+      //   tasks: ['sync:design']
+      // },
       examples: {
         files: ['repos/patternfly-core/tests/pages/_includes/widgets',
                 'repos/angular-patternfly/dist/docs/partials'],
@@ -314,7 +314,7 @@ module.exports = function (grunt) {
       'cname:' + target,
       'buildConfig:' + target,
       'sync:source',
-      'sync:design',
+      // 'sync:design',
       'sync:examples',
       'less',
       'cssmin',
@@ -340,11 +340,11 @@ module.exports = function (grunt) {
         url: 'https://github.com/patternfly/angular-patternfly.git',
         branch: 'master-dist'
       },
-      'patternfly-design': {
-        path: 'repos/patternfly-design',
-        url: 'https://github.com/patternfly/patternfly-design.git',
-        branch: 'master'
-      }
+      // 'patternfly-design': {
+      //   path: 'repos/patternfly-design',
+      //   url: 'https://github.com/patternfly/patternfly-design.git',
+      //   branch: 'master'
+      // }
     };
     var keys = target ? [target] : Object.keys(repoMap);
     var promises = [];
