@@ -3,7 +3,7 @@ title: Single Sign-On
 ---
 # Single Sign-On (SSO)
 
-Just a test
+Just a test test
 
 SSO (single sign-on) will allow a user to sign on once and access multiple applications within the same organization. For additional login methods, see:
 - [Login Page](https://www.patternfly.org/pattern-library/application-framework/login-page/#)
