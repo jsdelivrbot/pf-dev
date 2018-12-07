@@ -100,4 +100,4 @@ Search for an icon: <span class="icon-search-container"><input type="text" id="i
  [3]: http://getbootstrap.com/components/#glyphicons
  [4]: https://github.com/patternfly/patternfly/raw/master-dist/dist/fonts/PatternFlyIcons-webfont.ttf
  [5]: https://github.com/patternfly/patternfly/raw/master-dist/dist/fonts/FontAwesome.otf
- [6]: https://rawgit.com/patternfly/patternfly-design/master/styles/icons/patternfly-svg-icons.zip
+ [6]: https://cdn.jsdelivr.net/gh/patternfly/patternfly-design/styles/icons/patternfly-svg-icons.zip
